@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <title>Fylo: Inicio</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <img src="./images/logo.svg" alt="Logo" class="header__logo" loading="lazy">
+        </a>
+
+        <nav class="header__nav">
+            <a class="header__link" href="about.html">Información</a>
+            <a class="header__link" href="#">Calcular</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+
+        <div class="hero__wave">
+            <div class="container-calculate">
+
+
+                <div id="select-container">
+                    <p class="select__title animation-100" id="select">Seleccione que undidad desea calcular</p>
+
+                    <div class="select__container">
+                        <div class="select__option">
+                            <img id="voltaje" class="select__icon animation-100" src="./images/voltaje.svg"
+                                alt="Voltaje">
+                            <button href="#" class="btn-blue icon animation-100" data-type="voltaje">Calcular
+                                voltaje</button>
+                        </div>
+
+                        <div class="select__option">
+                            <img id="resistencia" class="select__icon icon animation-100" src="./images/resistencia.svg"
+                                alt="Resistencia">
+                            <button href="#" class="btn-blue icon animation-100" data-type="resistencia">Calcular
+                                resistencia</button>
+                        </div>
+
+                        <div class="select__option">
+                            <img id="intensidad" class="select__icon icon animation-100" src="./images/intensidad.svg"
+                                alt="Intensidad">
+                            <button href="#" class="btn-blue icon animation-100" data-type="intensidad">Calcular
+                                intensidad</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="circuit-container" class="container-faded-reverse display-none">
+                    <p class="select__title animation-100" id="select">Seleccione un circuito para calcular</p>
+
+                    <div class="container-circuit">
+                        <div class="select__option">
+                            <img class="select__img animation-100" src="./images/circuito.svg" alt="Voltaje">
+                            <button href="#" class="btn-blue icon animation-100" data-circuit="1">Seleccionar</button>
+                        </div>
+
+                        <div class="select__option">
+                            <img class="select__img icon animation-100" src="./images/circuito2.svg" alt="Resistencia">
+                            <button href="#" class="btn-blue icon animation-100" data-circuit="2">Seleccionar</button>
+                        </div>
+
+                        <div class="select__option">
+                            <img class="select__img icon animation-100" src="./images/circuito3.svg" alt="Intensidad">
+                            <button href="#" class="btn-blue icon animation-100" data-circuit="3">Seleccionar</button>
+                        </div>
+
+                        <div class="select__option">
+                            <img class="select__img icon animation-100" src="./images/circuito4.svg" alt="Intensidad">
+                            <button href="#" class="btn-blue icon animation-100" data-circuit="4">Seleccionar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="form-container" class="container-faded-reverse display-none">
+                    <p class="select__title animation-100" id="datos-solicitados">Ingrese los datos solicitados</p>
+
+                    <form class="form">
+                        <img class="select__icon icon animation-100 form__img" id="img-result" src="./images/circuito.svg">
+
+                        <div class="form__input-container">
+
+                        </div>
+
+                        <button class="btn-blue">Calcular</button>
+
+                    </form>
+                </div>
+
+                <div id="result-container" class="container-faded-reverse display-none">
+                    <p class="result" id="result-text"></p>
+
+                    <a href="./calculate.html" class="btn-blue">Calcular de vuelta</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+    <footer class="footer">
+        <p>Esta página ha sido creada por Agustín Vega &copy</p>
+    </footer>
+
+    <script src="./js/animation.js"></script>
+    <script src="./js/slider.js"></script>
+    <script src="./js/form.js"></script>
+</body>
+
+</html>

@@ -32,7 +32,6 @@ circuito3.addEventListener('click', getCircuit);
 circuito4.addEventListener('click', getCircuit);
 
 // Botones de calculo
-calculate.addEventListener('click', getResult);
 
 
 // Guarda el tipo de valor a calcular
@@ -119,34 +118,6 @@ function showForm() {
 
 }
 
-function getResult() {
-    hideForm()
-    showResult();
-}
-
-function hideForm() {
-    // Agrego la animacion de faded
-    formContainer.classList.add('container-faded');
-
-    setInterval(() => {
-        formContainer.classList.add('display-none');
-    }, 700)
-}
-
-
-function showResult() {
-    setTimeout(() => {
-        // Agrego la animacion de faded
-        resultContainer.classList.remove('display-none');
-
-        setInterval(() => {
-            resultContainer.classList.remove('container-faded-reverse');
-        }, 100)
-    }, 700)
-
-}
-
-
 function createInputs(circuit, type) {
 
     const inputContainer = document.querySelector('.form__input-container');
@@ -154,17 +125,19 @@ function createInputs(circuit, type) {
     if (circuit === '1' && type === 'voltaje') {
         const input1 = document.createElement('input');
         input1.classList.add('form__input');
-        input1.placeholder = 'Ingrese el valor de la intensidad';
+        input1.placeholder = 'Valor de la intensidad';
         input1.type = 'number'
         input1.id = 'I';
         input1.step = 'any';
+        input1.required = true;
 
         const input2 = document.createElement('input');
         input2.classList.add('form__input');
-        input2.placeholder = 'Ingrese el valor de la resistencia';
+        input2.placeholder = 'Valor de la resistencia';
         input2.type = 'number'
         input2.id = 'R';
         input2.step = 'any';
+        input2.required = true;
 
         inputContainer.appendChild(input1);
         inputContainer.appendChild(input2);
@@ -172,17 +145,19 @@ function createInputs(circuit, type) {
     } else if (circuit === '1' && type === 'resistencia') {
         const input1 = document.createElement('input');
         input1.classList.add('form__input');
-        input1.placeholder = 'Ingrese el valor del voltaje';
+        input1.placeholder = 'Valor del voltaje';
         input1.type = 'number'
         input1.id = 'V';
         input1.step = 'any';
-
+        input1.required = true;
+    
         const input2 = document.createElement('input');
         input2.classList.add('form__input');
-        input2.placeholder = 'Ingrese el valor de la intensidad';
+        input2.placeholder = 'Valor de la intensidad';
         input2.type = 'number'
         input2.id = 'I';
         input2.step = 'any';
+        input2.required = true;
 
         inputContainer.appendChild(input1);
         inputContainer.appendChild(input2);
@@ -190,19 +165,142 @@ function createInputs(circuit, type) {
     } else if (circuit === '1' && type === 'intensidad') {
         const input1 = document.createElement('input');
         input1.classList.add('form__input');
-        input1.placeholder = 'Ingrese el valor del voltaje';
+        input1.placeholder = 'Valor del voltaje';
         input1.type = 'number'
         input1.id = 'V';
         input1.step = 'any';
+        input1.required = true;
 
         const input2 = document.createElement('input');
         input2.classList.add('form__input');
-        input2.placeholder = 'Ingrese el valor de la resistencia';
+        input2.placeholder = 'Valor de la resistencia';
         input2.type = 'number'
         input2.id = 'R';
         input2.step = 'any';
+        input2.required = true;
 
         inputContainer.appendChild(input1);
         inputContainer.appendChild(input2);
+
+    } else if (circuit === '2' && type === 'voltaje') {
+
+        const input1 = document.createElement('input');
+        input1.classList.add('form__input');
+        input1.placeholder = 'Valor de R1';
+        input1.type = 'number'
+        input1.id = 'R1';
+        input1.step = 'any';
+        input1.required = true;
+
+        const input2 = document.createElement('input');
+        input2.classList.add('form__input');
+        input2.placeholder = 'Intensidad en R1';
+        input2.type = 'number'
+        input2.id = 'I1';
+        input2.step = 'any';
+        input2.required = true;
+
+
+        const input3 = document.createElement('input');
+        input3.classList.add('form__input');
+        input3.placeholder = 'Valor de R2';
+        input3.type = 'number'
+        input3.id = 'R2';
+        input3.step = 'any';
+        input3.required = true;
+
+        const input4 = document.createElement('input');
+        input4.classList.add('form__input');
+        input4.placeholder = 'Intensidad en R2';
+        input4.type = 'number'
+        input4.id = 'I2';
+        input4.step = 'any';
+        input4.required = true;
+
+
+        inputContainer.appendChild(input1);
+        inputContainer.appendChild(input2);
+        inputContainer.appendChild(input3);
+        inputContainer.appendChild(input4);
+    } else if (circuit === '2' && type === 'resistencia') {
+
+        const input1 = document.createElement('input');
+        input1.classList.add('form__input');
+        input1.placeholder = 'Voltaje en R1';
+        input1.type = 'number'
+        input1.id = 'V1';
+        input1.step = 'any';
+        input1.required = true;
+
+        const input2 = document.createElement('input');
+        input2.classList.add('form__input');
+        input2.placeholder = 'Intensidad en R1';
+        input2.type = 'number'
+        input2.id = 'I1';
+        input2.step = 'any';
+        input2.required = true;
+
+
+        const input3 = document.createElement('input');
+        input3.classList.add('form__input');
+        input3.placeholder = 'Voltaje en R2';
+        input3.type = 'number'
+        input3.id = 'V2';
+        input3.step = 'any';
+        input3.required = true;
+
+        const input4 = document.createElement('input');
+        input4.classList.add('form__input');
+        input4.placeholder = 'Intensidad en R2';
+        input4.type = 'number'
+        input4.id = 'I2';
+        input4.step = 'any';
+        input4.required = true;
+
+
+        inputContainer.appendChild(input1);
+        inputContainer.appendChild(input2);
+        inputContainer.appendChild(input3);
+        inputContainer.appendChild(input4);
+    } else if (circuit === '2' && type === 'intensidad') {
+
+        const input1 = document.createElement('input');
+        input1.classList.add('form__input');
+        input1.placeholder = 'Valor de R1';
+        input1.type = 'number'
+        input1.id = 'R1';
+        input1.step = 'any';
+        input1.required = true;
+
+        const input2 = document.createElement('input');
+        input2.classList.add('form__input');
+        input2.placeholder = 'Voltaje en R1';
+        input2.type = 'number'
+        input2.id = 'V1';
+        input2.step = 'any';
+        input2.required = true;
+
+
+        const input3 = document.createElement('input');
+        input3.classList.add('form__input');
+        input3.placeholder = 'Valor de R2';
+        input3.type = 'number'
+        input3.id = 'R2';
+        input3.step = 'any';
+        input3.required = true;
+
+        const input4 = document.createElement('input');
+        input4.classList.add('form__input');
+        input4.placeholder = 'Voltaje en R2';
+        input4.type = 'number'
+        input4.id = 'V2';
+        input4.step = 'any';
+        input4.required = true;
+
+
+        inputContainer.appendChild(input1);
+        inputContainer.appendChild(input2);
+        inputContainer.appendChild(input3);
+        inputContainer.appendChild(input4);
     }
 }

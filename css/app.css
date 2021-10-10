@@ -106,15 +106,7 @@ button {
     cursor: not-allowed;
 }
 .btn-blue:hover {
-    animation: scale-button .85s infinite alternate;
-}
-@keyframes scale-button {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.05);
-    }
+    transform: scale(1.1)
 }
 /* ========= HEADER ========= */
 .header {

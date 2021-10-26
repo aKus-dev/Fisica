@@ -446,6 +446,7 @@ button {
     .form__input-container {
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 5rem;
     }
     .form__input {

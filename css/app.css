@@ -193,7 +193,8 @@ button {
 }
 @media (min-width: 1000px) {
     .features {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 8rem;
     }
 }
